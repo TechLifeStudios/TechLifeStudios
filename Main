@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Shop Name</title>
+    <style>
+        /* CSS Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        /* New Styles */
+        .category-boxes {
+            display: flex;
+            justify-content: space-around;
+            background-color: #f0f0f0;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .category-box {
+            width: 30%;
+            background-color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+        .category-box.selected {
+            background-color: #f5f5f5;
+        }
+        /* Overlay Styles */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 999; /* Make sure it's above the content */
+            transition: opacity 0.3s ease;
+        }
+        .contact-form {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            width: 60%; /* Adjust the width of the contact form */
+        }
+        /* Blur Effect */
+        .blur {
+            filter: blur(5px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1>Your Shop Name</h1>
+            <!-- Navigation Menu -->
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#" id="contact-btn">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <div class="container">
+        <!-- Categories Section -->
+        <div class="category-boxes">
+            <!-- High Spec PC Section -->
+            <div class="category-box" id="high-spec">
+                <h2>High Spec PC</h2>
+            </div>
+            <!-- Mid Spec PC Section -->
+            <div class="category-box" id="mid-spec">
+                <h2>Mid Spec PC</h2>
+            </div>
+            <!-- Low Spec PC Section -->
+            <div class="category-box" id="low-spec">
+                <h2>Low Spec PC</h2>
+            </div>
+        </div>
+
+        <!-- Dynamic Content Section -->
+        <div id="dynamic-content">
+            <!-- Content will be loaded dynamically based on the selected category -->
+        </div>
+    </div>
+
+    <!-- Contact Form Overlay -->
+    <div class="overlay" id="overlay">
+        <div class="contact-form">
+            <h2>Contact Us</h2>
+            <p>Here goes your contact form...</p>
+            <button id="close-btn">Close</button>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Your Shop Name. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript Code
+        // Add event listeners to category boxes
+        const highSpecBox = document.getElementById('high-spec');
+        const midSpecBox = document.getElementById('mid-spec');
+        const lowSpecBox = document.getElementById('low-spec');
+        const dynamicContent = document.getElementById('dynamic-content');
+
+        highSpecBox.addEventListener('click', () => {
+            // Change background color of selected box
+            highSpecBox.classList.add('selected');
+            midSpecBox.classList.remove('selected');
+            lowSpecBox.classList.remove('selected');
+
+            // Load content for High Spec PC
+            dynamicContent.innerHTML = `
+                <h2>High Spec PC Content</h2>
+                <!-- Add your content specific to High Spec PC -->
+            `;
+        });
+
+        midSpecBox.addEventListener('click', () => {
+            // Change background color of selected box
+            highSpecBox.classList.remove('selected');
+            midSpecBox.classList.add('selected');
+            lowSpecBox.classList.remove('selected');
+
+            // Load content for Mid Spec PC
+            dynamicContent.innerHTML = `
+                <h2>Mid Spec PC Content</h2>
+                <!-- Add your content specific to Mid Spec PC -->
+            `;
+        });
+
+        lowSpecBox.addEventListener('click', () => {
+            // Change background color of selected box
+            highSpecBox.classList.remove('selected');
+            midSpecBox.classList.remove('selected');
+            lowSpecBox.classList.add('selected');
+
+            // Load content for Low Spec PC
+            dynamicContent.innerHTML = `
+                <h2>Low Spec PC Content</h2>
+                <!-- Add your content specific to Low Spec PC -->
+            `;
+        });
+
+        // Contact Button Functionality
+        const contactBtn = document.getElementById('contact-btn');
+        const overlay = document.getElementById('overlay');
+        const closeBtn = document.getElementById('close-btn');
+        const mainContent = document.querySelector('.container');
+
+        contactBtn.addEventListener('click', () => {
+            overlay.style.display = 'block';
+            setTimeout(() => {
+                overlay.style.opacity = '1';
+            }, 50);
+            mainContent.classList.add('blur');
+        });
+
+        closeBtn.addEventListener('click', () => {
+            overlay.style.opacity = '0';
+            setTimeout(() => {
+                overlay.style.display = 'none';
+            }, 300);
+            mainContent.classList.remove('blur');
+        });
+    </script>
+</body>
+</html>
