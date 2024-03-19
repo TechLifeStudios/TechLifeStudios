@@ -159,6 +159,7 @@
         const highSpecBox = document.getElementById('high-spec');
         const midSpecBox = document.getElementById('mid-spec');
         const lowSpecBox = document.getElementById('low-spec');
+        const lowSpecBox = document.getElementById('custom-build');
         const dynamicContent = document.getElementById('dynamic-content');
 
         highSpecBox.addEventListener('click', () => {
@@ -166,6 +167,7 @@
             highSpecBox.classList.add('selected');
             midSpecBox.classList.remove('selected');
             lowSpecBox.classList.remove('selected');
+            custombuildBox.classList.remove('selected');
 
             // Load content for High Spec PC
             dynamicContent.innerHTML = `
@@ -179,6 +181,7 @@
             highSpecBox.classList.remove('selected');
             midSpecBox.classList.add('selected');
             lowSpecBox.classList.remove('selected');
+            custombuildBox.classList.remove('selected');
 
             // Load content for Mid Spec PC
             dynamicContent.innerHTML = `
@@ -192,6 +195,7 @@
             highSpecBox.classList.remove('selected');
             midSpecBox.classList.remove('selected');
             lowSpecBox.classList.add('selected');
+            custombuildBox.classList.remove('selected');
 
             // Load content for Low Spec PC
             dynamicContent.innerHTML = `
@@ -200,6 +204,19 @@
             `;
         });
 
+             // Load content for Custom Build
+            dynamicContent.innerHTML = `
+                <h2>Mid Spec PC Content</h2>
+                <!-- Add your content specific to Mid Spec PC -->
+            `;
+        });
+
+        custombuild.addEventListener('click', () => {
+            // Change background color of selected box
+            highSpecBox.classList.remove('selected');
+            midSpecBox.classList.remove('selected');
+            lowSpecBox.classList.add('selected');
+            custombuildBox.classList.add('selected');
         // Contact Button Functionality
         const contactBtn = document.getElementById('contact-btn');
         const overlay = document.getElementById('overlay');
