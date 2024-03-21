@@ -92,11 +92,11 @@
     <!-- Header Section -->
     <header>
   <header>
-
+        <img src="https://i.ibb.co/NLFGZzS/Logo.png" alt="Logo">
         <!-- Adjust the alt attribute as needed for accessibility -->
     </header>
         <div class="container">
-<img src="https://i.ibb.co/NLFGZzS/Logo.png" alt="Logo">            <h1>Tech Life</h1>
+            <h1>Tech Life</h1>
             <!-- Navigation Menu -->
             <nav>
                 <ul>
@@ -204,19 +204,21 @@
             `;
         });
 
-             // Load content for Custom Build
-            dynamicContent.innerHTML = `
-                <h2>Mid Spec PC Content</h2>
-                <!-- Add your content specific to Mid Spec PC -->
-            `;
-        });
-
         custombuild.addEventListener('click', () => {
             // Change background color of selected box
             highSpecBox.classList.remove('selected');
             midSpecBox.classList.remove('selected');
             lowSpecBox.classList.add('selected');
             custombuildBox.classList.add('selected');
+            
+             // Load content for Custom Build
+            dynamicContent.innerHTML = `
+                <h2>Mid Spec PC Content</h2>
+                <!-- Add your content specific to Custom Build -->
+            `;
+        });
+
+        
         // Contact Button Functionality
         const contactBtn = document.getElementById('contact-btn');
         const overlay = document.getElementById('overlay');
