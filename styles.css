@@ -11,6 +11,9 @@ body {
     line-height: 1.6;
     background-color: #f9f9f9;
     color: #333;
+    min-height: 100vh; /* Set minimum height of the body to full viewport height */
+    display: flex;
+    flex-direction: column;
 }
 
 .container {
@@ -108,8 +111,5 @@ footer {
     color: #fff;
     text-align: center;
     padding: 10px 0;
-}
-
-footer p {
-    margin: 0;
+    margin-top: auto; /* Push the footer to the bottom */
 }
