@@ -1,14 +1,35 @@
+Key:
+Workstation = Windows Pro, Must have Intel CPU
+Gaming = Windows Home/Pro, Can Have Intel or AMD CPU, Must have GPU
+Beguinner: Windows Home, Must have Intel CPU
+[name] Custom = Can Be Customized Heavily
+
 Low Spec:
   Low Workstation:
-  CPU: Intel i3 5th Gen
+  CPU: Intel i3 5th Gen IG
   RAM: 8gb DDR3
   Main Storage: 256gb HDD
   PSU: Dell Optiplex 3020 7020 9020, 290W Power Supply
-  OS: Windows 10 Professional
+  OS: Windows 10 Pro
 
   Low Workstation:
-  CPU: Intel i5 4th Gen
+  CPU: Intel i5 4th Gen IG
   RAM: 8gb DDR3
-  Main Storage: 256gb HDD
+  Main Storage: 512gb HDD
   PSU: Dell Optiplex 3020 7020 9020, 290W Power Supply
-  OS: Windows 10 Professional
+  OS: Windows 10 Pro
+
+  Low Beguinner:
+  CPU: Intel i5 5th Gen
+  RAM: 8gb DDR3
+  Main Storage: 256gb SSD
+  
+
+Mid Spec:
+  Mid Workstation:
+  CPU: Intel i5 7th Gen IG
+  RAM: 8gb DDR4
+  Main Storage: 256gb SSD
+  PSU: DEEPCOOL PK450H 450W Power Supply
+  OS: Windows 10 Pro
+  
