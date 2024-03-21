@@ -1,0 +1,14 @@
+Low Spec:
+  Low Workstation:
+  CPU: Intel i3 5th Gen
+  RAM: 8gb DDR3
+  Main Storage: 256gb HDD
+  PSU: Dell Optiplex 3020 7020 9020, 290W Power Supply
+  OS: Windows 10 Professional
+
+  Low Workstation:
+  CPU: Intel i5 4th Gen
+  RAM: 8gb DDR3
+  Main Storage: 256gb HDD
+  PSU: Dell Optiplex 3020 7020 9020, 290W Power Supply
+  OS: Windows 10 Professional
