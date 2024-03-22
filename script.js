@@ -1,3 +1,4 @@
+// JavaScript Code
 document.addEventListener('DOMContentLoaded', function () {
     // Add event listeners to category boxes
     const highSpecBox = document.getElementById('high-spec');
@@ -5,10 +6,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const lowSpecBox = document.getElementById('low-spec');
     const custombuildBox = document.getElementById('custom-build');
     const dynamicContent = document.getElementById('dynamic-content');
-    const contactBtn = document.getElementById('contact-btn');
-    const overlay = document.getElementById('overlay');
-    const closeBtn = document.getElementById('close-btn');
-    const mainContent = document.querySelector('.container');
 
     highSpecBox.addEventListener('click', () => {
         // Change background color of selected box
@@ -65,6 +62,12 @@ document.addEventListener('DOMContentLoaded', function () {
             <!-- Add your content specific to Custom Build -->
         `;
     });
+
+    // Contact Button Functionality
+    const contactBtn = document.getElementById('contact-btn');
+    const overlay = document.getElementById('overlay');
+    const closeBtn = document.getElementById('close-btn');
+    const mainContent = document.querySelector('.container');
 
     contactBtn.addEventListener('click', () => {
         overlay.style.display = 'block';
