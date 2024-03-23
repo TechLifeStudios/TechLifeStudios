@@ -32,7 +32,7 @@ header {
 
 .site-name {
     font-size: 24px; /* Adjust the font size as needed */
-    margin-left: 10px; /* Add margin to move the site name to the left */
+    margin-left: 0; /* Move site name all the way to the left */
 }
 
 nav ul {
