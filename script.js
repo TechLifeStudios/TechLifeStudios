@@ -1,86 +1,72 @@
-// JavaScript Code
 document.addEventListener('DOMContentLoaded', function () {
-    // Add event listeners to category boxes
-    const highSpecBox = document.getElementById('high-spec');
-    const midSpecBox = document.getElementById('mid-spec');
-    const lowSpecBox = document.getElementById('low-spec');
-    const custombuildBox = document.getElementById('powerful');
-    const dynamicContent = document.getElementById('dynamic-content');
-
-    highSpecBox.addEventListener('click', () => {
+    // Function to load content for Powerful PCs
+    function loadPowerfulPcs() {
         // Change background color of selected box
-        highSpecBox.classList.add('selected');
-        midSpecBox.classList.remove('selected');
-        lowSpecBox.classList.remove('selected');
-        custombuildBox.classList.remove('selected');
+        document.getElementById('high-spec').classList.remove('selected');
+        document.getElementById('mid-spec').classList.remove('selected');
+        document.getElementById('low-spec').classList.remove('selected');
+        document.getElementById('powerful').classList.add('selected');
 
-        // Load content for High Spec PC
-        dynamicContent.innerHTML = `
+        // Load content for Powerful PCs
+        document.getElementById('dynamic-content').innerHTML = `
+            <h2>Powerful PC Content</h2>
+            <!-- Add your content specific to Powerful PCs -->
+        `;
+    }
+
+    // Event listeners for category boxes
+    document.getElementById('high-spec').addEventListener('click', function () {
+        document.getElementById('high-spec').classList.add('selected');
+        document.getElementById('mid-spec').classList.remove('selected');
+        document.getElementById('low-spec').classList.remove('selected');
+        document.getElementById('powerful').classList.remove('selected');
+
+        document.getElementById('dynamic-content').innerHTML = `
             <h2>High Spec PC Content</h2>
             <!-- Add your content specific to High Spec PC -->
         `;
     });
 
-    midSpecBox.addEventListener('click', () => {
-        // Change background color of selected box
-        highSpecBox.classList.remove('selected');
-        midSpecBox.classList.add('selected');
-        lowSpecBox.classList.remove('selected');
-        custombuildBox.classList.remove('selected');
+    document.getElementById('mid-spec').addEventListener('click', function () {
+        document.getElementById('high-spec').classList.remove('selected');
+        document.getElementById('mid-spec').classList.add('selected');
+        document.getElementById('low-spec').classList.remove('selected');
+        document.getElementById('powerful').classList.remove('selected');
 
-        // Load content for Business PCs
-        dynamicContent.innerHTML = `
+        document.getElementById('dynamic-content').innerHTML = `
+            <h2>Mid Spec PC Content</h2>
             <!-- Add your content specific to Mid Spec PC -->
         `;
     });
 
-    lowSpecBox.addEventListener('click', () => {
-        // Change background color of selected box
-        highSpecBox.classList.remove('selected');
-        midSpecBox.classList.remove('selected');
-        lowSpecBox.classList.add('selected');
-        custombuildBox.classList.remove('selected');
+    document.getElementById('low-spec').addEventListener('click', function () {
+        document.getElementById('high-spec').classList.remove('selected');
+        document.getElementById('mid-spec').classList.remove('selected');
+        document.getElementById('low-spec').classList.add('selected');
+        document.getElementById('powerful').classList.remove('selected');
 
-        // Load content for School PCs
-        dynamicContent.innerHTML = `
-            <h2></h2>
+        document.getElementById('dynamic-content').innerHTML = `
+            <h2>Low Spec PC Content</h2>
             <!-- Add your content specific to Low Spec PC -->
         `;
     });
 
-    custombuildBox.addEventListener('click', () => {
-        // Change background color of selected box
-        highSpecBox.classList.remove('selected');
-        midSpecBox.classList.remove('selected');
-        lowSpecBox.classList.remove('selected');
-        custombuildBox.classList.add('selected');
-
-        // Load content for Powerful PCs
-        dynamicContent.innerHTML = `
-            <h2></h2>
-            <!-- Add your content specific to Custom Build -->
-        `;
-    });
+    document.getElementById('powerful').addEventListener('click', loadPowerfulPcs);
 
     // Contact Button Functionality
-    const contactBtn = document.getElementById('contact-btn');
-    const overlay = document.getElementById('overlay');
-    const closeBtn = document.getElementById('close-btn');
-    const mainContent = document.querySelector('.container');
-
-    contactBtn.addEventListener('click', () => {
-        overlay.style.display = 'block';
+    document.getElementById('contact-btn').addEventListener('click', function () {
+        document.getElementById('overlay').style.display = 'block';
         setTimeout(() => {
-            overlay.style.opacity = '1';
+            document.getElementById('overlay').style.opacity = '1';
         }, 50);
-        mainContent.classList.add('blur');
+        document.querySelector('.container').classList.add('blur');
     });
 
-    closeBtn.addEventListener('click', () => {
-        overlay.style.opacity = '0';
+    document.getElementById('close-btn').addEventListener('click', function () {
+        document.getElementById('overlay').style.opacity = '0';
         setTimeout(() => {
-            overlay.style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
         }, 300);
-        mainContent.classList.remove('blur');
+        document.querySelector('.container').classList.remove('blur');
     });
 });
