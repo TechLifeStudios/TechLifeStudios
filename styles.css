@@ -1,88 +1,92 @@
-// script.js
+/* styles.css */
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Add event listeners to category boxes
-    const highSpecBox = document.getElementById('high-spec');
-    const midSpecBox = document.getElementById('mid-spec');
-    const lowSpecBox = document.getElementById('low-spec');
-    const powerfulPcsBox = document.getElementById('powerful-pcs'); // Updated variable name
-    const dynamicContent = document.getElementById('dynamic-content');
+/* Header Styles */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Align content in header to the sides */
+    padding: 10px;
+    background-color: #f0f0f0;
+}
 
-    highSpecBox.addEventListener('click', () => {
-        // Change background color of selected box
-        highSpecBox.classList.add('selected');
-        midSpecBox.classList.remove('selected');
-        lowSpecBox.classList.remove('selected');
-        powerfulPcsBox.classList.remove('selected'); // Added this line to remove 'selected' class from Powerful PCs
+.logo {
+    width: 50px; /* Adjust the width as needed */
+    height: auto;
+    margin-right: 10px; /* Adjust spacing between logo and text */
+}
 
-        // Load content for High Spec PC
-        dynamicContent.innerHTML = `
-            <h2>High Spec PC Content</h2>
-            <!-- Add your content specific to High Spec PC -->
-        `;
-    });
+.site-name {
+    font-size: 24px; /* Adjust the font size as needed */
+}
 
-    midSpecBox.addEventListener('click', () => {
-        // Change background color of selected box
-        highSpecBox.classList.remove('selected');
-        midSpecBox.classList.add('selected');
-        lowSpecBox.classList.remove('selected');
-        powerfulPcsBox.classList.remove('selected'); // Added this line to remove 'selected' class from Powerful PCs
+/* Navigation Menu Styles */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
 
-        // Load content for Mid Spec PC
-        dynamicContent.innerHTML = `
-            <h2>Mid Spec PC Content</h2>
-            <!-- Add your content specific to Mid Spec PC -->
-        `;
-    });
+nav ul li {
+    margin-right: 20px;
+}
 
-    lowSpecBox.addEventListener('click', () => {
-        // Change background color of selected box
-        highSpecBox.classList.remove('selected');
-        midSpecBox.classList.remove('selected');
-        lowSpecBox.classList.add('selected');
-        powerfulPcsBox.classList.remove('selected'); // Added this line to remove 'selected' class from Powerful PCs
+nav ul li a {
+    color: black; /* Change link color to black */
+    text-decoration: none;
+    font-size: 16px;
+}
 
-        // Load content for Low Spec PC
-        dynamicContent.innerHTML = `
-            <h2>Low Spec PC Content</h2>
-            <!-- Add your content specific to Low Spec PC -->
-        `;
-    });
+/* Category Box Styles */
+.category-boxes {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin-bottom: 20px;
+}
 
-    powerfulPcsBox.addEventListener('click', () => {
-        // Change background color of selected box
-        highSpecBox.classList.remove('selected');
-        midSpecBox.classList.remove('selected');
-        lowSpecBox.classList.remove('selected');
-        powerfulPcsBox.classList.add('selected');
+.category-box {
+    width: 30%;
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
 
-        // Load content for Powerful PCs
-        dynamicContent.innerHTML = `
-            <h2>Powerful PCs Content</h2>
-            <!-- Add your content specific to Powerful PCs -->
-        `;
-    });
+.category-box.selected {
+    background-color: #f5f5f5;
+}
 
-    // Contact Button Functionality
-    const contactBtn = document.getElementById('contact-btn');
-    const overlay = document.getElementById('overlay');
-    const closeBtn = document.getElementById('close-btn');
-    const mainContent = document.querySelector('.container');
+/* Overlay Styles */
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999; /* Make sure it's above the content */
+    transition: opacity 0.3s ease;
+    opacity: 0; /* Set initial opacity to 0 */
+}
 
-    contactBtn.addEventListener('click', () => {
-        overlay.style.display = 'block';
-        setTimeout(() => {
-            overlay.style.opacity = '1';
-        }, 50);
-        mainContent.classList.add('blur');
-    });
+.contact-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    width: 60%; /* Adjust the width of the contact form */
+}
 
-    closeBtn.addEventListener('click', () => {
-        overlay.style.opacity = '0';
-        setTimeout(() => {
-            overlay.style.display = 'none';
-        }, 300);
-        mainContent.classList.remove('blur');
-    });
-});
+/* Blur Effect */
+.blur {
+    filter: blur(5px);
+}
