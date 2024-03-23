@@ -51,7 +51,8 @@ document.addEventListener('DOMContentLoaded', function () {
         `;
     });
 
-    document.getElementById('powerful').addEventListener('click', loadPowerfulPcs);
+    // Use the correct ID for the Powerful PCs box
+    document.getElementById('powerful-pcs').addEventListener('click', loadPowerfulPcs);
 
     // Contact Button Functionality
     document.getElementById('contact-btn').addEventListener('click', function () {
