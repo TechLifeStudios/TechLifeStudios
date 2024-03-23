@@ -47,7 +47,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff; /* Set link color to white */
+    color: #fff; /* Set default link color to white */
     text-decoration: underline; /* Added underline for clickable appearance */
     font-size: 18px; /* Adjust the font size as needed */
 }
@@ -56,9 +56,8 @@ nav ul li a {
 nav ul li.home a,
 nav ul li.about a,
 nav ul li.contact a {
-    color: #fff; /* Set link color to white */
-    text-decoration: underline; /* Added underline for clickable appearance */
-    font-size: 18px; /* Adjust the font size as needed */
+    color: #000; /* Set link color to black */
+    text-decoration: none; /* Remove underline */
 }
 
 /* Category boxes styles */
