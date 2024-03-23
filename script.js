@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const highSpecBox = document.getElementById('high-spec');
     const midSpecBox = document.getElementById('mid-spec');
     const lowSpecBox = document.getElementById('low-spec');
-    const custombuildBox = document.getElementById('custom-build');
+    const custombuildBox = document.getElementById('powerful');
     const dynamicContent = document.getElementById('dynamic-content');
 
     highSpecBox.addEventListener('click', () => {
@@ -28,9 +28,8 @@ document.addEventListener('DOMContentLoaded', function () {
         lowSpecBox.classList.remove('selected');
         custombuildBox.classList.remove('selected');
 
-        // Load content for Mid Spec PC
+        // Load content for Business PCs
         dynamicContent.innerHTML = `
-            <h2>Mid Spec PC Content</h2>
             <!-- Add your content specific to Mid Spec PC -->
         `;
     });
@@ -42,9 +41,9 @@ document.addEventListener('DOMContentLoaded', function () {
         lowSpecBox.classList.add('selected');
         custombuildBox.classList.remove('selected');
 
-        // Load content for Low Spec PC
+        // Load content for School PCs
         dynamicContent.innerHTML = `
-            <h2>Low Spec PC Content</h2>
+            <h2></h2>
             <!-- Add your content specific to Low Spec PC -->
         `;
     });
@@ -56,9 +55,9 @@ document.addEventListener('DOMContentLoaded', function () {
         lowSpecBox.classList.remove('selected');
         custombuildBox.classList.add('selected');
 
-        // Load content for Custom Build
+        // Load content for Powerful PCs
         dynamicContent.innerHTML = `
-            <h2>Custom Build Content</h2>
+            <h2></h2>
             <!-- Add your content specific to Custom Build -->
         `;
     });
