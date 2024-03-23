@@ -56,8 +56,8 @@ nav ul li a {
 nav ul li.home a,
 nav ul li.about a,
 nav ul li.contact a {
-    color: #000; /* Set link color to black */
-    text-decoration: none; /* Remove underline */
+    color: #000 !important; /* Set link color to black */
+    text-decoration: none !important; /* Remove underline */
 }
 
 /* Category boxes styles */
