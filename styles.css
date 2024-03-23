@@ -1,10 +1,3 @@
-/* Resetting default styles */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
 /* Global styles */
 body {
     font-family: Arial, sans-serif;
@@ -39,6 +32,7 @@ header {
 
 .site-name {
     font-size: 24px; /* Adjust the font size as needed */
+    margin-left: 10px; /* Add margin to move the site name to the left */
 }
 
 nav ul {
@@ -53,7 +47,16 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #333; /* Changed link color to improve readability */
+    color: #fff; /* Set link color to white */
+    text-decoration: underline; /* Added underline for clickable appearance */
+    font-size: 18px; /* Adjust the font size as needed */
+}
+
+/* Style specific to Home, About, and Contact links */
+nav ul li.home a,
+nav ul li.about a,
+nav ul li.contact a {
+    color: #fff; /* Set link color to white */
     text-decoration: underline; /* Added underline for clickable appearance */
     font-size: 18px; /* Adjust the font size as needed */
 }
