@@ -96,4 +96,18 @@ document.addEventListener('DOMContentLoaded', function () {
     lowSpecBox.addEventListener('click', () => {
         redirectToSubdirectory('school');
     });
+
+    // Home Button Redirection
+    const homeBtn = document.querySelector('.nav-link.home');
+    homeBtn.addEventListener('click', (e) => {
+        e.preventDefault(); // Prevent default behavior
+        redirectToSubdirectory('');
+    });
+
+    // Contact Button Redirection
+    const contactLink = document.querySelector('.nav-link.contact');
+    contactLink.addEventListener('click', (e) => {
+        e.preventDefault(); // Prevent default behavior
+        redirectToSubdirectory('contact');
+    });
 });
