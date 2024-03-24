@@ -14,17 +14,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
     midSpecBox.addEventListener('click', () => {
         // Redirect to About page
-        window.location.href = './about';
+        window.location.href = './';
     });
 
     lowSpecBox.addEventListener('click', () => {
         // Redirect to Contact page
-        window.location.href = './contact';
+        window.location.href = './';
     });
 
     powerfulBox.addEventListener('click', () => {
         // Redirect to Powerful PCs page
-        window.location.href = './powerful-pcs'; // Change this to the actual subdirectory name
+        window.location.href = './'; // Change this to the actual subdirectory name
     });
 
     // Contact Button Functionality
