@@ -1,35 +1,58 @@
-// JavaScript Code
 document.addEventListener('DOMContentLoaded', function () {
     // Add event listeners to category boxes
-    const homeTab = document.getElementById('home-tab');
-    const businessTab = document.getElementById('business-tab');
-    const gamingTab = document.getElementById('gaming-tab');
-    const schoolTab = document.getElementById('school-tab');
-    const powerfulTab = document.getElementById('powerful-tab');
+    const highSpecBox = document.getElementById('high-spec');
+    const midSpecBox = document.getElementById('mid-spec');
+    const lowSpecBox = document.getElementById('low-spec');
+    const powerfulBox = document.getElementById('powerful');
 
-    homeTab.addEventListener('click', () => {
-        // Redirect to Home subdirectory
-        window.location.href = './home';
+    const dynamicContent = document.getElementById('dynamic-content');
+
+    highSpecBox.addEventListener('click', () => {
+        highSpecBox.classList.add('selected');
+        midSpecBox.classList.remove('selected');
+        lowSpecBox.classList.remove('selected');
+        powerfulBox.classList.remove('selected');
+
+        dynamicContent.innerHTML = `
+            <h2>Gaming PCs Content</h2>
+            <!-- Add your content specific to Gaming PCs -->
+        `;
     });
 
-    businessTab.addEventListener('click', () => {
-        // Redirect to Business PCs subdirectory
-        window.location.href = './business';
+    midSpecBox.addEventListener('click', () => {
+        highSpecBox.classList.remove('selected');
+        midSpecBox.classList.add('selected');
+        lowSpecBox.classList.remove('selected');
+        powerfulBox.classList.remove('selected');
+
+        dynamicContent.innerHTML = `
+            <h2>Business PCs Content</h2>
+            <!-- Add your content specific to Business PCs -->
+        `;
     });
 
-    gamingTab.addEventListener('click', () => {
-        // Redirect to Gaming PCs subdirectory
-        window.location.href = './gaming';
+    lowSpecBox.addEventListener('click', () => {
+        highSpecBox.classList.remove('selected');
+        midSpecBox.classList.remove('selected');
+        lowSpecBox.classList.add('selected');
+        powerfulBox.classList.remove('selected');
+
+        dynamicContent.innerHTML = `
+            <h2>School PCs Content</h2>
+            <!-- Add your content specific to School PCs -->
+        `;
     });
 
-    schoolTab.addEventListener('click', () => {
-        // Redirect to School PCs subdirectory
-        window.location.href = './school';
-    });
+    powerfulBox.addEventListener('click', () => {
+        highSpecBox.classList.remove('selected');
+        midSpecBox.classList.remove('selected');
+        lowSpecBox.classList.remove('selected');
+        powerfulBox.classList.add('selected');
 
-    powerfulTab.addEventListener('click', () => {
-        // Redirect to Powerful PCs subdirectory
-        window.location.href = './powerful-pcs';
+        dynamicContent.innerHTML = `
+            <h2>Powerful PCs Content</h2>
+            <!-- Add your content specific to Powerful PCs -->
+        `;
     });
 
     // Contact Button Functionality
@@ -52,5 +75,25 @@ document.addEventListener('DOMContentLoaded', function () {
             overlay.style.display = 'none';
         }, 300);
         mainContent.classList.remove('blur');
+    });
+
+    // Function to handle subdirectory redirection
+    function redirectToSubdirectory(subdirectory) {
+        const currentLocation = window.location.href;
+        const baseUrl = currentLocation.split('/').slice(0, 3).join('/');
+        window.location.href = `${baseUrl}/${subdirectory}`;
+    }
+
+    // Event listeners for category boxes redirection
+    highSpecBox.addEventListener('click', () => {
+        redirectToSubdirectory('gaming');
+    });
+
+    midSpecBox.addEventListener('click', () => {
+        redirectToSubdirectory('business');
+    });
+
+    lowSpecBox.addEventListener('click', () => {
+        redirectToSubdirectory('school');
     });
 });
