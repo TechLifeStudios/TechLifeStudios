@@ -1,30 +1,35 @@
 // JavaScript Code
 document.addEventListener('DOMContentLoaded', function () {
     // Add event listeners to category boxes
-    const highSpecBox = document.getElementById('high-spec');
-    const midSpecBox = document.getElementById('mid-spec');
-    const lowSpecBox = document.getElementById('low-spec');
-    const powerfulBox = document.getElementById('powerful');
-    const dynamicContent = document.getElementById('dynamic-content');
+    const homeTab = document.getElementById('home-tab');
+    const businessTab = document.getElementById('business-tab');
+    const gamingTab = document.getElementById('gaming-tab');
+    const schoolTab = document.getElementById('school-tab');
+    const powerfulTab = document.getElementById('powerful-tab');
 
-    highSpecBox.addEventListener('click', () => {
-        // Redirect to Home page
-        window.location.href = './';
+    homeTab.addEventListener('click', () => {
+        // Redirect to Home subdirectory
+        window.location.href = './home';
     });
 
-    midSpecBox.addEventListener('click', () => {
-        // Redirect to About page
-        window.location.href = './';
+    businessTab.addEventListener('click', () => {
+        // Redirect to Business PCs subdirectory
+        window.location.href = './business';
     });
 
-    lowSpecBox.addEventListener('click', () => {
-        // Redirect to Contact page
-        window.location.href = './';
+    gamingTab.addEventListener('click', () => {
+        // Redirect to Gaming PCs subdirectory
+        window.location.href = './gaming';
     });
 
-    powerfulBox.addEventListener('click', () => {
-        // Redirect to Powerful PCs page
-        window.location.href = './'; // Change this to the actual subdirectory name
+    schoolTab.addEventListener('click', () => {
+        // Redirect to School PCs subdirectory
+        window.location.href = './school';
+    });
+
+    powerfulTab.addEventListener('click', () => {
+        // Redirect to Powerful PCs subdirectory
+        window.location.href = './powerful-pcs';
     });
 
     // Contact Button Functionality
