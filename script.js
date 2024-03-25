@@ -61,7 +61,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const closeBtn = document.getElementById('close-btn');
     const mainContent = document.querySelector('.container');
 
-    contactBtn.addEventListener('click', () => {
+    contactBtn.addEventListener('click', (e) => {
+        e.preventDefault();
         overlay.style.display = 'block';
         setTimeout(() => {
             overlay.style.opacity = '1';
@@ -84,30 +85,17 @@ document.addEventListener('DOMContentLoaded', function () {
         window.location.href = `${baseUrl}/${subdirectory}`;
     }
 
-    // Event listeners for category boxes redirection
-    highSpecBox.addEventListener('click', () => {
-        redirectToSubdirectory('gaming');
-    });
-
-    midSpecBox.addEventListener('click', () => {
-        redirectToSubdirectory('business');
-    });
-
-    lowSpecBox.addEventListener('click', () => {
-        redirectToSubdirectory('school');
-    });
-
     // Home Button Redirection
     const homeBtn = document.querySelector('.nav-link.home');
     homeBtn.addEventListener('click', (e) => {
-        e.preventDefault(); // Prevent default behavior
+        e.preventDefault();
         redirectToSubdirectory('');
     });
 
     // Contact Button Redirection
     const contactLink = document.querySelector('.nav-link.contact');
     contactLink.addEventListener('click', (e) => {
-        e.preventDefault(); // Prevent default behavior
+        e.preventDefault();
         redirectToSubdirectory('contact');
     });
 });
